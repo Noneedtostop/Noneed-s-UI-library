@@ -1,0 +1,75 @@
+local library = {}
+
+library:CreateWindow("ok")
+
+function library:CreateWindow(name)
+    local Design = Instance.new("ScreenGui")
+    local TopMain = Instance.new("Frame")
+    local Container = Instance.new("Frame")
+    local UIGridLayout = Instance.new("UIGridLayout")
+    local Title = Instance.new("TextLabel")
+
+    Design.Name = "Design"
+    Design.Parent = game.CoreGui
+    Design.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
+    TopMain.Name = "TopMain"
+    TopMain.Parent = Design
+    TopMain.BackgroundColor3 = Color3.new(0.156863, 0.156863, 0.156863)
+    TopMain.BorderSizePixel = 0
+    TopMain.Position = UDim2.new(0.217961863, 0, 0.175182477, 0)
+    TopMain.Size = UDim2.new(0, 762, 0, 26)
+    
+    Container.Name = "Container"
+    Container.Parent = TopMain
+    Container.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+    Container.BorderSizePixel = 0
+    Container.Position = UDim2.new(-0.000799864938, 0, 0.964618921, 0)
+    Container.Size = UDim2.new(0, 762, 0, 418)
+    
+    UIGridLayout.Parent = Container
+    UIGridLayout.FillDirection = Enum.FillDirection.Vertical
+    UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout.CellSize = UDim2.new(0, 120, 0, 35)
+    
+    TextButton.Parent = Container
+    TextButton.BackgroundColor3 = Color3.new(1, 1, 1)
+    TextButton.BackgroundTransparency = 1
+    TextButton.Size = UDim2.new(0, 200, 0, 50)
+    TextButton.Font = Enum.Font.SourceSansBold
+    TextButton.TextColor3 = Color3.new(1, 0, 0)
+    TextButton.TextSize = 20
+    
+    Title.Name = "Title"
+    Title.Parent = TopMain
+    Title.BackgroundColor3 = Color3.new(0.156863, 0.156863, 0.156863)
+    Title.BackgroundTransparency = 1
+    Title.BorderSizePixel = 0
+    Title.Position = UDim2.new(0.347769022, 0, 0.0526316725, 0)
+    Title.Size = UDim2.new(0, 233, 0, 25)
+    Title.Font = Enum.Font.SourceSansBold
+    Title.Text = "Noneed's UI"
+    Title.TextColor3 = Color3.new(1, 0, 0)
+    Title.TextSize = 20
+
+    local Buttonlibrary = {}
+
+    function Buttonlibrary:CreateWindow(Text)
+        local TextButton = Instance.new("TextButton")
+
+        TextButton.Parent = Container
+        TextButton.BackgroundColor3 = Color3.fromRGB(50,50,50)
+        TextButton.BorderSizePixel = 0
+        TextButton.Position = UDim2.new(-0.001, 0,0.965, 0)
+        TextButton.Size = UDim2.new(0, 200, 0, 50)
+        TextButton.Font = Enum.Font.SourceSansBold
+        TextButton.TextColor3 = Color3.fromRGB(255, 0, 0)
+        TextButton.TextSize = 20.00
+        TextButton.Text = Text
+    end
+    return Buttonlibrary
+
+    
+end
+
+return library
